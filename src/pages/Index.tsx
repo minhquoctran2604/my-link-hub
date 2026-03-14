@@ -50,7 +50,7 @@ const Index = () =>
             ​minhquoctran2604
           </h1>
           <p className="text-[8px] text-muted-foreground leading-relaxed sm:text-sm">
-            Designer & Developer<span className="pixel-blink">_</span>
+            Glory Glory Manunited<span className="pixel-blink">_</span>
           </p>
         </div>
       </motion.div>
