@@ -12,9 +12,9 @@ const SocialIcon = ({ href, icon: Icon, label }: SocialIconProps) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+    className="p-2 text-muted-foreground hover:text-primary transition-colors duration-100 pixel-glitch"
   >
-    <Icon size={20} />
+    <Icon size={18} strokeWidth={2.5} />
   </a>
 );
 
