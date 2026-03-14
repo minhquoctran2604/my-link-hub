@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Globe, FileText, Briefcase, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Globe, FileText, Briefcase, Mail, Github, Linkedin } from "lucide-react";
+import { FacebookIcon, InstagramIcon, DiscordIcon, TelegramIcon } from "@/components/SocialIcons";
 import profileImg from "@/assets/profile-pixel.png";
 import LinkButton from "@/components/LinkButton";
 import SocialIcon from "@/components/SocialIcon";
@@ -13,9 +14,12 @@ const links = [
 ];
 
 const socials = [
+  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
+  { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
+  { href: "https://discord.gg", icon: DiscordIcon, label: "Discord" },
+  { href: "https://t.me", icon: TelegramIcon, label: "Telegram" },
   { href: "https://github.com", icon: Github, label: "GitHub" },
   { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
 ];
 
 const container = {

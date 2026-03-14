@@ -1,8 +1,6 @@
-import { LucideIcon } from "lucide-react";
-
 interface SocialIconProps {
   href: string;
-  icon: LucideIcon;
+  icon: React.ComponentType<any>;
   label: string;
 }
 
@@ -14,7 +12,7 @@ const SocialIcon = ({ href, icon: Icon, label }: SocialIconProps) => (
     aria-label={label}
     className="p-2 text-muted-foreground hover:text-primary transition-colors duration-100 pixel-glitch"
   >
-    <Icon size={18} strokeWidth={2.5} />
+    <Icon size={18} />
   </a>
 );
 
