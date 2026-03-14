@@ -4,7 +4,7 @@ import React from "react";
 interface LinkButtonProps {
   href: string;
   title: string;
-  icon?: React.ComponentType<{ size?: number }>;
+  icon?: React.ComponentType<any>;
   color?: string;
 }
 
