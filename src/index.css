@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,44 +6,126 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 13% 9%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 9%;
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 13% 9%;
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 239 84% 67%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 239 84% 67%;
-    --radius: 9999px;
+    --background: 240 20% 8%;
+    --foreground: 120 100% 80%;
+    --card: 240 15% 12%;
+    --card-foreground: 120 100% 80%;
+    --popover: 240 15% 12%;
+    --popover-foreground: 120 100% 80%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 240 20% 8%;
+    --secondary: 270 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 15% 18%;
+    --muted-foreground: 120 40% 55%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 240 20% 8%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 120 60% 30%;
+    --input: 120 60% 30%;
+    --ring: 120 100% 50%;
+    --radius: 0px;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 15% 10%;
+    --sidebar-foreground: 120 100% 80%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 240 20% 8%;
+    --sidebar-accent: 240 15% 18%;
+    --sidebar-accent-foreground: 120 100% 80%;
+    --sidebar-border: 120 60% 30%;
+    --sidebar-ring: 120 100% 50%;
+
+    --pixel-pink: 330 80% 60%;
+    --pixel-cyan: 180 100% 50%;
+    --pixel-yellow: 45 100% 55%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    image-rendering: pixelated;
   }
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Press Start 2P', monospace;
   }
+}
+
+@layer utilities {
+  .pixel-border {
+    box-shadow:
+      4px 0 0 0 hsl(var(--border)),
+      -4px 0 0 0 hsl(var(--border)),
+      0 4px 0 0 hsl(var(--border)),
+      0 -4px 0 0 hsl(var(--border));
+  }
+
+  .pixel-border-accent {
+    box-shadow:
+      4px 0 0 0 hsl(var(--accent)),
+      -4px 0 0 0 hsl(var(--accent)),
+      0 4px 0 0 hsl(var(--accent)),
+      0 -4px 0 0 hsl(var(--accent));
+  }
+
+  .pixel-border-primary {
+    box-shadow:
+      4px 0 0 0 hsl(var(--primary)),
+      -4px 0 0 0 hsl(var(--primary)),
+      0 4px 0 0 hsl(var(--primary)),
+      0 -4px 0 0 hsl(var(--primary));
+  }
+}
+
+/* Scanline overlay */
+.scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsla(0, 0%, 0%, 0.08) 2px,
+    hsla(0, 0%, 0%, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.pixel-blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Float bounce */
+@keyframes pixel-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.pixel-float {
+  animation: pixel-float 2s steps(4) infinite;
+}
+
+/* Glitch flicker */
+@keyframes glitch {
+  0%, 90%, 100% { opacity: 1; transform: translate(0); }
+  92% { opacity: 0.8; transform: translate(-2px, 1px); }
+  94% { opacity: 0.9; transform: translate(2px, -1px); }
+  96% { opacity: 0.7; transform: translate(-1px, 2px); }
+}
+.pixel-glitch:hover {
+  animation: glitch 0.3s steps(1) infinite;
+}
+
+/* Star twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
