@@ -1,8 +1,6 @@
-import { ComponentType } from "react";
-
 interface SocialIconProps {
   href: string;
-  icon: ComponentType<{ size?: number }>;
+  icon: React.ComponentType<any>;
   label: string;
 }
 
