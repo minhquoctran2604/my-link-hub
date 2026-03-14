@@ -77,19 +77,12 @@ const Index = () => (
         ))}
       </div>
 
-      {/* Social Icons */}
-      <motion.div className="flex gap-5 mt-2" variants={item}>
-        {socials.map((social) => (
-          <SocialIcon key={social.label} {...social} />
-        ))}
-      </motion.div>
-
       {/* Footer */}
       <motion.p
         className="text-[7px] text-muted-foreground tracking-wider"
         variants={item}
       >
-        © 2026 PRESS START TO CONTINUE
+        #1ceQ
       </motion.p>
     </motion.div>
   </div>
