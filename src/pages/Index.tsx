@@ -7,12 +7,12 @@ import SocialIcon from "@/components/SocialIcon";
 import Stars from "@/components/Stars";
 
 const links = [
-{ href: "https://facebook.com", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
-{ href: "https://instagram.com", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
-{ href: "https://discord.gg", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
-{ href: "https://t.me", title: ">>> Telegram", icon: TelegramIcon, color: "primary" },
-{ href: "https://github.com", title: ">>> GitHub", icon: Github, color: "accent" },
-{ href: "https://linkedin.com", title: ">>> LinkedIn", icon: Linkedin, color: "secondary" }];
+  { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
+  { href: "https://www.instagram.com/minhquoctran2604/", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
+  { href: "https://minhquoctran2604.github.io/cmc-landing/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
+  { href: "https://t.me/mqt2604", title: ">>> Telegram", icon: TelegramIcon, color: "primary" },
+  { href: "https://github.com/minhquoctran2604", title: ">>> GitHub", icon: Github, color: "accent" },
+  { href: "https://www.linkedin.com/in/mqt2604/", title: ">>> LinkedIn", icon: Linkedin, color: "secondary" }];
 
 
 const container = {
