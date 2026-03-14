@@ -7,10 +7,6 @@ import SocialIcon from "@/components/SocialIcon";
 import Stars from "@/components/Stars";
 
 const links = [
-  { href: "https://example.com", title: ">>> My Website", icon: Globe, color: "primary" },
-  { href: "https://example.com/portfolio", title: ">>> Portfolio", icon: Briefcase, color: "accent" },
-  { href: "https://example.com/blog", title: ">>> Read My Blog", icon: FileText, color: "secondary" },
-  { href: "mailto:hello@example.com", title: ">>> Contact Me", icon: Mail, color: "primary" },
   { href: "https://facebook.com", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
   { href: "https://instagram.com", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
   { href: "https://discord.gg", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
