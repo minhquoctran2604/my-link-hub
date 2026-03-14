@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Globe, FileText, Briefcase, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Globe, FileText, Briefcase, Mail, Github, Linkedin } from "lucide-react";
+import { FacebookIcon, InstagramIcon, DiscordIcon, TelegramIcon } from "@/components/SocialIcons";
 import profileImg from "@/assets/profile-pixel.png";
 import LinkButton from "@/components/LinkButton";
 import SocialIcon from "@/components/SocialIcon";
