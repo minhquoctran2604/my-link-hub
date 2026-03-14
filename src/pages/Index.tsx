@@ -11,15 +11,12 @@ const links = [
   { href: "https://example.com/portfolio", title: ">>> Portfolio", icon: Briefcase, color: "accent" },
   { href: "https://example.com/blog", title: ">>> Read My Blog", icon: FileText, color: "secondary" },
   { href: "mailto:hello@example.com", title: ">>> Contact Me", icon: Mail, color: "primary" },
-];
-
-const socials = [
-  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
-  { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
-  { href: "https://discord.gg", icon: DiscordIcon, label: "Discord" },
-  { href: "https://t.me", icon: TelegramIcon, label: "Telegram" },
-  { href: "https://github.com", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://facebook.com", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
+  { href: "https://instagram.com", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
+  { href: "https://discord.gg", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
+  { href: "https://t.me", title: ">>> Telegram", icon: TelegramIcon, color: "primary" },
+  { href: "https://github.com", title: ">>> GitHub", icon: Github, color: "accent" },
+  { href: "https://linkedin.com", title: ">>> LinkedIn", icon: Linkedin, color: "secondary" },
 ];
 
 const container = {
@@ -80,19 +77,12 @@ const Index = () => (
         ))}
       </div>
 
-      {/* Social Icons */}
-      <motion.div className="flex gap-5 mt-2" variants={item}>
-        {socials.map((social) => (
-          <SocialIcon key={social.label} {...social} />
-        ))}
-      </motion.div>
-
       {/* Footer */}
       <motion.p
         className="text-[7px] text-muted-foreground tracking-wider"
         variants={item}
       >
-        © 2026 PRESS START TO CONTINUE
+        #1ceQ
       </motion.p>
     </motion.div>
   </div>

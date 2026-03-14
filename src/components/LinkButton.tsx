@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import React from "react";
 
 interface LinkButtonProps {
   href: string;
   title: string;
-  icon?: LucideIcon;
+  icon?: React.ComponentType<any>;
   color?: string;
 }
 
