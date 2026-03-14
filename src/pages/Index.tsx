@@ -14,9 +14,12 @@ const links = [
 ];
 
 const socials = [
+  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
+  { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
+  { href: "https://discord.gg", icon: DiscordIcon, label: "Discord" },
+  { href: "https://t.me", icon: TelegramIcon, label: "Telegram" },
   { href: "https://github.com", icon: Github, label: "GitHub" },
   { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
 ];
 
 const container = {
