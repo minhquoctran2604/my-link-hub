@@ -39,10 +39,10 @@ const Index = () =>
       <motion.div className="flex flex-col items-center gap-4" variants={item}>
         <div className="pixel-float">
           <img
-          src={profileImg}
+
           alt="Profile"
           className="w-24 h-24 pixel-border"
-          style={{ imageRendering: "pixelated" }} />
+          style={{ imageRendering: "pixelated" }} src="/lovable-uploads/21fcf257-d2dc-43a4-9281-210be1237bed.jpg" />
         
         </div>
         <div className="text-center space-y-2">
@@ -50,7 +50,7 @@ const Index = () =>
             ​minhquoctran2604
           </h1>
           <p className="text-[8px] text-muted-foreground leading-relaxed sm:text-sm">
-            #1ceQ<span className="pixel-blink">_</span>
+            Designer & Developer<span className="pixel-blink">_</span>
           </p>
         </div>
       </motion.div>
