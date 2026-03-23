@@ -297,12 +297,13 @@ const Pacman = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center" style={{ opacity: 0.13 }}>
+    <div className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center" style={{ opacity: 0.15 }}>
       <canvas
         ref={canvasRef}
         style={{
-          width: COLS * CELL,
-          height: ROWS * CELL,
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
           imageRendering: "pixelated",
         }}
       />
