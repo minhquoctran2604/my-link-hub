@@ -5,6 +5,7 @@ import profileImg from "@/assets/profile-pixel.png";
 import LinkButton from "@/components/LinkButton";
 import SocialIcon from "@/components/SocialIcon";
 import Stars from "@/components/Stars";
+import Pacman from "@/components/Pacman";
 
 const links = [
   { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
@@ -28,6 +29,7 @@ const item = {
 const Index = () =>
 <div className="relative flex min-h-screen items-center justify-center bg-background px-4 py-12 scanlines">
     <Stars />
+    <Pacman />
     
     <motion.div
     className="relative z-10 w-full max-w-md flex flex-col items-center gap-8"
