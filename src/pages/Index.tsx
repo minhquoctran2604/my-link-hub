@@ -5,6 +5,7 @@ import profileImg from "@/assets/profile-pixel.png";
 import LinkButton from "@/components/LinkButton";
 import SocialIcon from "@/components/SocialIcon";
 import Stars from "@/components/Stars";
+import Pacman from "@/components/Pacman";
 
 const links = [
   { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
