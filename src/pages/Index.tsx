@@ -6,6 +6,7 @@ import LinkButton from "@/components/LinkButton";
 import SocialIcon from "@/components/SocialIcon";
 import Stars from "@/components/Stars";
 import Pacman from "@/components/Pacman";
+import Mario from "@/components/Mario";
 
 const links = [
   { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
@@ -27,29 +28,30 @@ const item = {
 };
 
 const Index = () =>
-<div className="relative flex min-h-screen items-center justify-center bg-background px-4 py-12 scanlines">
+  <div className="relative flex min-h-screen items-center justify-center bg-background px-4 py-12 scanlines">
     <Stars />
     <Pacman />
-    
+    <Mario />
+
     <motion.div
-    className="relative z-10 w-full max-w-md flex flex-col items-center gap-8"
-    variants={container}
-    initial="hidden"
-    animate="show">
-    
+      className="relative z-10 w-full max-w-md flex flex-col items-center gap-8"
+      variants={container}
+      initial="hidden"
+      animate="show">
+
       {/* Profile */}
       <motion.div className="flex flex-col items-center gap-4" variants={item}>
         <div className="pixel-float">
           <img
 
-          alt="Profile"
-          className="w-24 h-24 pixel-border"
-          style={{ imageRendering: "pixelated" }} src="/lovable-uploads/21fcf257-d2dc-43a4-9281-210be1237bed.jpg" />
-        
+            alt="Profile"
+            className="w-24 h-24 pixel-border"
+            style={{ imageRendering: "pixelated" }} src="/lovable-uploads/21fcf257-d2dc-43a4-9281-210be1237bed.jpg" />
+
         </div>
         <div className="text-center space-y-2">
           <h1 className="text-sm sm:text-base text-primary">
-            ​minhquoctran2604
+            minhquoctran2604
           </h1>
           <p className="text-[8px] text-muted-foreground leading-relaxed sm:text-sm">
             Glory Glory Manunited<span className="pixel-blink">_</span>
@@ -69,17 +71,17 @@ const Index = () =>
       {/* Links */}
       <div className="w-full flex flex-col gap-4">
         {links.map((link) =>
-      <motion.div key={link.title} variants={item}>
+          <motion.div key={link.title} variants={item}>
             <LinkButton {...link} />
           </motion.div>
-      )}
+        )}
       </div>
 
       {/* Footer */}
       <motion.p
-      className="text-[7px] text-muted-foreground tracking-wider"
-      variants={item}>
-      
+        className="text-[7px] text-muted-foreground tracking-wider"
+        variants={item}>
+
         #dob2604
       </motion.p>
     </motion.div>
