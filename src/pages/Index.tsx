@@ -10,7 +10,7 @@ import Mario from "@/components/Mario";
 
 const links = [
   { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
-  { href: "https://www.instagram.com/minhquoctran2604/", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
+  { href: "https://www.instagram.com/_1ceq_/", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
   { href: "https://minhquoctran2604.github.io/cmc-landing/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
   { href: "https://t.me/mqt2604", title: ">>> Telegram", icon: TelegramIcon, color: "primary" },
   { href: "https://github.com/minhquoctran2604", title: ">>> GitHub", icon: Github, color: "accent" },
