@@ -9,11 +9,11 @@ import Pacman from "@/components/Pacman";
 import Mario from "@/components/Mario";
 
 const links = [
-  { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
-  { href: "https://www.instagram.com/minhquoctran2604/", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
-  { href: "https://minhquoctran2604.github.io/cmc-landing/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
+  { href: "https://www.facebook.com/_1ceq_", title: ">>> Facebook", icon: FacebookIcon, color: "primary" },
+  { href: "https://www.instagram.com/_1ceq_/", title: ">>> Instagram", icon: InstagramIcon, color: "accent" },
+  { href: "https://_1ceq_.github.io/cmc-landing/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", title: ">>> Discord", icon: DiscordIcon, color: "secondary" },
   { href: "https://t.me/mqt2604", title: ">>> Telegram", icon: TelegramIcon, color: "primary" },
-  { href: "https://github.com/minhquoctran2604", title: ">>> GitHub", icon: Github, color: "accent" },
+  { href: "https://github.com/_1ceq_", title: ">>> GitHub", icon: Github, color: "accent" },
   { href: "https://www.linkedin.com/in/mqt2604/", title: ">>> LinkedIn", icon: Linkedin, color: "secondary" }];
 
 
@@ -51,7 +51,7 @@ const Index = () =>
         </div>
         <div className="text-center space-y-2">
           <h1 className="text-sm sm:text-base text-primary">
-            minhquoctran2604
+            _1ceq_
           </h1>
           <p className="text-[8px] text-muted-foreground leading-relaxed sm:text-sm">
             Glory Glory Manunited<span className="pixel-blink">_</span>
