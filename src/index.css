@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,36 +48,91 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Press Start 2P', monospace;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+  }
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--background));
   }
 }
 
 @layer utilities {
+  /* Stepped pixel border — 8 segments for true pixel-art outline */
   .pixel-border {
+    position: relative;
     box-shadow:
       4px 0 0 0 hsl(var(--border)),
       -4px 0 0 0 hsl(var(--border)),
       0 4px 0 0 hsl(var(--border)),
-      0 -4px 0 0 hsl(var(--border));
-  }
-
-  .pixel-border-accent {
-    box-shadow:
-      4px 0 0 0 hsl(var(--accent)),
-      -4px 0 0 0 hsl(var(--accent)),
-      0 4px 0 0 hsl(var(--accent)),
-      0 -4px 0 0 hsl(var(--accent));
+      0 -4px 0 0 hsl(var(--border)),
+      4px 4px 0 0 hsl(var(--border)),
+      -4px 4px 0 0 hsl(var(--border)),
+      4px -4px 0 0 hsl(var(--border)),
+      -4px -4px 0 0 hsl(var(--border));
   }
 
   .pixel-border-primary {
+    position: relative;
     box-shadow:
       4px 0 0 0 hsl(var(--primary)),
       -4px 0 0 0 hsl(var(--primary)),
       0 4px 0 0 hsl(var(--primary)),
-      0 -4px 0 0 hsl(var(--primary));
+      0 -4px 0 0 hsl(var(--primary)),
+      4px 4px 0 0 hsl(var(--primary)),
+      -4px 4px 0 0 hsl(var(--primary)),
+      4px -4px 0 0 hsl(var(--primary)),
+      -4px -4px 0 0 hsl(var(--primary));
+  }
+
+  .pixel-border-accent {
+    position: relative;
+    box-shadow:
+      4px 0 0 0 hsl(var(--accent)),
+      -4px 0 0 0 hsl(var(--accent)),
+      0 4px 0 0 hsl(var(--accent)),
+      0 -4px 0 0 hsl(var(--accent)),
+      4px 4px 0 0 hsl(var(--accent)),
+      -4px 4px 0 0 hsl(var(--accent)),
+      4px -4px 0 0 hsl(var(--accent)),
+      -4px -4px 0 0 hsl(var(--accent));
+  }
+
+  /* Frame for avatar — doubles border for chunky pixel look */
+  .pixel-frame {
+    position: relative;
+    padding: 4px;
+    background: hsl(var(--primary));
+    box-shadow:
+      4px 0 0 0 hsl(var(--accent)),
+      -4px 0 0 0 hsl(var(--accent)),
+      0 4px 0 0 hsl(var(--accent)),
+      0 -4px 0 0 hsl(var(--accent)),
+      4px 4px 0 0 hsl(var(--primary)),
+      -4px 4px 0 0 hsl(var(--primary)),
+      4px -4px 0 0 hsl(var(--primary)),
+      -4px -4px 0 0 hsl(var(--primary));
+  }
+
+  /* Press effect for pixel buttons */
+  .pixel-press {
+    transition: transform 80ms steps(2), box-shadow 80ms steps(2);
+  }
+  .pixel-press:active {
+    transform: translate(2px, 2px);
+    box-shadow:
+      2px 0 0 0 hsl(var(--border)),
+      -2px 0 0 0 hsl(var(--border)),
+      0 2px 0 0 hsl(var(--border)),
+      0 -2px 0 0 hsl(var(--border)),
+      2px 2px 0 0 hsl(var(--border)),
+      -2px 2px 0 0 hsl(var(--border)),
+      2px -2px 0 0 hsl(var(--border)),
+      -2px -2px 0 0 hsl(var(--border)) !important;
   }
 }
 
-/* Scanline overlay */
+/* Scanline overlay — slightly stronger for CRT feel */
 .scanlines::after {
   content: '';
   position: fixed;
@@ -88,11 +141,25 @@
     0deg,
     transparent,
     transparent 2px,
-    hsla(0, 0%, 0%, 0.08) 2px,
-    hsla(0, 0%, 0%, 0.08) 4px
+    hsla(0, 0%, 0%, 0.12) 2px,
+    hsla(0, 0%, 0%, 0.12) 4px
   );
   pointer-events: none;
   z-index: 50;
+}
+
+/* CRT vignette */
+.scanlines::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    hsla(240, 30%, 5%, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 49;
 }
 
 /* Blinking cursor */
@@ -104,28 +171,37 @@
   animation: blink 1s steps(1) infinite;
 }
 
-/* Float bounce */
+/* Float bounce — snappy stepped feel */
 @keyframes pixel-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 .pixel-float {
-  animation: pixel-float 2s steps(4) infinite;
+  animation: pixel-float 1.8s steps(6) infinite;
 }
 
 /* Glitch flicker */
 @keyframes glitch {
   0%, 90%, 100% { opacity: 1; transform: translate(0); }
-  92% { opacity: 0.8; transform: translate(-2px, 1px); }
-  94% { opacity: 0.9; transform: translate(2px, -1px); }
+  92% { opacity: 0.85; transform: translate(-2px, 1px); }
+  94% { opacity: 0.95; transform: translate(2px, -1px); }
   96% { opacity: 0.7; transform: translate(-1px, 2px); }
 }
 .pixel-glitch:hover {
-  animation: glitch 0.3s steps(1) infinite;
+  animation: glitch 0.4s steps(1) infinite;
 }
 
 /* Star twinkle */
 @keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.9; }
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

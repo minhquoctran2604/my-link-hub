@@ -1,107 +1,57 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const Mario = () => {
-    // Mario pixel data (very simplified 12x12 or similar)
-    // We'll use a few variants of movement
-    const marios = Array.from({ length: 4 }, (_, i) => ({
-        id: i,
-        initialX: Math.random() * 80 + 10 + "%",
-        initialY: Math.random() * 80 + 10 + "%",
-        delay: i * 0.8,
-        duration: 2 + Math.random() * 2,
-    }));
+    // Two tiny decorative marios at the corners — never overlap content (max-w-md centered)
+    const marios = [
+        { id: 0, side: "left", top: "12%", delay: 0 },
+        { id: 1, side: "right", top: "72%", delay: 1.2 },
+    ];
 
     return (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden>
             {marios.map((mario) => (
                 <motion.div
                     key={mario.id}
-                    className="absolute w-8 h-8 pointer-events-none"
-                    initial={{ x: mario.initialX, y: mario.initialY, opacity: 0 }}
+                    className="absolute w-6 h-6 pointer-events-none opacity-50"
+                    style={{
+                        [mario.side === "left" ? "left" : "right"]: "4%",
+                        top: mario.top,
+                    }}
                     animate={{
-                        y: ["0%", "-20px", "0%"],
-                        scaleX: [1, -1, 1],
-                        opacity: [0.4, 0.8, 0.4],
+                        y: ["0px", "-8px", "0px"],
                     }}
                     transition={{
-                        y: {
-                            duration: 0.5,
-                            repeat: Infinity,
-                            ease: "steps(4)",
-                            delay: mario.delay,
-                        },
-                        scaleX: {
-                            duration: 1.5,
-                            repeat: Infinity,
-                            ease: "steps(2)",
-                            delay: mario.delay,
-                        },
-                        opacity: {
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }
-                    }}
-                    style={{
-                        left: mario.initialX,
-                        top: mario.initialY,
+                        duration: 1.6,
+                        repeat: Infinity,
+                        ease: "steps(4)",
+                        delay: mario.delay,
                     }}
                 >
-                    {/* Simple Pixel Mario SVG */}
-                    <svg viewBox="0 0 16 16" className="w-full h-full" style={{ imageRendering: "pixelated" }}>
+                    {/* Tiny 8x8 pixel Mario sprite */}
+                    <svg viewBox="0 0 8 10" className="w-full h-full" style={{ imageRendering: "pixelated" }}>
                         {/* Hat */}
-                        <rect x="5" y="1" width="7" height="1" fill="#FF0000" />
-                        <rect x="4" y="2" width="10" height="1" fill="#FF0000" />
-                        {/* Hair/Face */}
-                        <rect x="4" y="3" width="3" height="1" fill="#8B4513" />
-                        <rect x="7" y="3" width="3" height="1" fill="#FFDAB9" />
-                        <rect x="10" y="3" width="1" height="1" fill="#000000" />
-                        <rect x="11" y="3" width="1" height="1" fill="#FFDAB9" />
-
-                        <rect x="3" y="4" width="1" height="1" fill="#8B4513" />
-                        <rect x="4" y="4" width="1" height="1" fill="#FFDAB9" />
-                        <rect x="5" y="4" width="1" height="1" fill="#8B4513" />
-                        <rect x="6" y="4" width="3" height="1" fill="#FFDAB9" />
-                        <rect x="9" y="4" width="1" height="1" fill="#8B4513" />
-                        <rect x="10" y="4" width="3" height="1" fill="#FFDAB9" />
-
-                        <rect x="3" y="5" width="1" height="1" fill="#8B4513" />
-                        <rect x="4" y="5" width="1" height="1" fill="#FFDAB9" />
-                        <rect x="5" y="5" width="2" height="1" fill="#8B4513" />
-                        <rect x="7" y="5" width="4" height="1" fill="#FFDAB9" />
-                        <rect x="11" y="5" width="1" height="1" fill="#8B4513" />
-                        <rect x="12" y="5" width="3" height="1" fill="#FFDAB9" />
-
-                        <rect x="4" y="6" width="2" height="1" fill="#8B4513" />
-                        <rect x="6" y="6" width="4" height="1" fill="#FFDAB9" />
-                        <rect x="10" y="6" width="4" height="1" fill="#8B4513" />
-
-                        <rect x="6" y="7" width="8" height="1" fill="#FFDAB9" />
-
-                        {/* Shirt/Overalls */}
-                        <rect x="4" y="8" width="2" height="1" fill="#FF0000" />
-                        <rect x="6" y="8" width="1" height="1" fill="#0000FF" />
-                        <rect x="7" y="8" width="3" height="1" fill="#FF0000" />
-
-                        <rect x="3" y="9" width="3" height="1" fill="#FF0000" />
-                        <rect x="6" y="9" width="1" height="1" fill="#0000FF" />
-                        <rect x="7" y="9" width="2" height="1" fill="#FF0000" />
-                        <rect x="9" y="9" width="1" height="1" fill="#FFFF00" />
-                        <rect x="10" y="9" width="2" height="1" fill="#FF0000" />
-
-                        <rect x="2" y="10" width="4" height="1" fill="#FFDAB9" />
-                        <rect x="6" y="10" width="4" height="1" fill="#0000FF" />
-                        <rect x="10" y="10" width="4" height="1" fill="#FFDAB9" />
-
-                        <rect x="2" y="11" width="12" height="1" fill="#0000FF" />
-                        <rect x="4" y="12" width="8" height="1" fill="#0000FF" />
-
+                        <rect x="2" y="0" width="4" height="1" fill="#E60012" />
+                        <rect x="1" y="1" width="6" height="1" fill="#E60012" />
+                        {/* Face */}
+                        <rect x="1" y="2" width="2" height="1" fill="#FFD7B5" />
+                        <rect x="3" y="2" width="2" height="1" fill="#FFD7B5" />
+                        <rect x="5" y="2" width="2" height="1" fill="#FFD7B5" />
+                        {/* Eyes */}
+                        <rect x="3" y="3" width="1" height="1" fill="#000" />
+                        <rect x="5" y="3" width="1" height="1" fill="#000" />
+                        <rect x="2" y="4" width="4" height="1" fill="#FFD7B5" />
+                        {/* Mustache */}
+                        <rect x="2" y="5" width="4" height="1" fill="#5A2D0C" />
+                        {/* Shirt */}
+                        <rect x="1" y="6" width="6" height="1" fill="#E60012" />
+                        {/* Overalls */}
+                        <rect x="2" y="7" width="4" height="1" fill="#1E40AF" />
+                        {/* Legs */}
+                        <rect x="1" y="8" width="2" height="1" fill="#1E40AF" />
+                        <rect x="5" y="8" width="2" height="1" fill="#1E40AF" />
                         {/* Shoes */}
-                        <rect x="3" y="13" width="3" height="1" fill="#8B4513" />
-                        <rect x="10" y="13" width="3" height="1" fill="#8B4513" />
-                        <rect x="2" y="14" width="4" height="1" fill="#8B4513" />
-                        <rect x="10" y="14" width="4" height="1" fill="#8B4513" />
+                        <rect x="0" y="9" width="3" height="1" fill="#5A2D0C" />
+                        <rect x="5" y="9" width="3" height="1" fill="#5A2D0C" />
                     </svg>
                 </motion.div>
             ))}
