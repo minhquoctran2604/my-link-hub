@@ -9,28 +9,25 @@ interface LinkButtonProps {
 }
 
 type Palette = {
-  // Default state: muted bg, accent-colored text + border
   base: string;
-  // Hover: filled with accent color, dark text for contrast
   hover: string;
-  // RGB triplet for the glow shadow (matches the accent hue)
   glowRgb: string;
 };
 
 const palettes: Record<string, Palette> = {
   primary: {
     base: "bg-muted text-primary border-primary",
-    hover: "hover:bg-primary hover:text-background hover:border-primary",
+    hover: "hover:bg-primary/20 hover:text-primary hover:border-primary/60",
     glowRgb: "34, 197, 94",
   },
   accent: {
     base: "bg-muted text-accent border-accent",
-    hover: "hover:bg-accent hover:text-background hover:border-accent",
+    hover: "hover:bg-accent/20 hover:text-accent hover:border-accent/60",
     glowRgb: "234, 179, 8",
   },
   secondary: {
     base: "bg-muted text-secondary border-secondary",
-    hover: "hover:bg-secondary hover:text-background hover:border-secondary",
+    hover: "hover:bg-secondary/20 hover:text-secondary hover:border-secondary/60",
     glowRgb: "168, 85, 247",
   },
 };
@@ -43,12 +40,11 @@ const LinkButton = ({ href, title, icon: Icon, color = "primary" }: LinkButtonPr
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ y: -3 }}
+      whileHover={{ y: -2 }}
       whileTap={{ y: 0 }}
       transition={{ type: "tween", duration: 0.08, ease: "linear" }}
-      className={`group relative flex items-center gap-3 w-full px-5 py-4 text-[10px] sm:text-xs leading-relaxed border-2 ${p.base} ${p.hover} pixel-press`}
+      className={`group relative flex items-center gap-3 w-full px-5 py-4 text-[10px] sm:text-xs leading-relaxed border-2 ${p.base} ${p.hover} pixel-press focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
       style={{
-        // hard offset glow shadow (arcade button under-light)
         boxShadow: `4px 4px 0 0 rgba(${p.glowRgb}, 0.55), 4px 4px 0 1px hsl(var(--border))`,
       }}
     >
