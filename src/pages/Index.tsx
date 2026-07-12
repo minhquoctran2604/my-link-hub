@@ -11,7 +11,7 @@ const links = [
   { href: "https://www.facebook.com/minhquoctran2604", title: ">>> Facebook", icon: FacebookIcon, color: "primary" as const },
   { href: "https://www.instagram.com/_1ceq_/", title: ">>> Instagram", icon: InstagramIcon, color: "accent" as const },
   { href: "https://minhquoctran2604.github.io/cmc-landing/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", title: ">>> Discord", icon: DiscordIcon, color: "secondary" as const },
-  { href: "https://t.me/mqt2604", title: ">>> Telegram", icon: TelegramIcon, color: "primary" as const },
+  { href: "https://t.me/thanhvienandanh", title: ">>> Telegram", icon: TelegramIcon, color: "primary" as const },
   { href: "https://github.com/minhquoctran2604", title: ">>> GitHub", icon: Github, color: "accent" as const },
   { href: "https://www.linkedin.com/in/mqt2604/", title: ">>> LinkedIn", icon: Linkedin, color: "secondary" as const },
 ];
