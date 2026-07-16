@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
-import { FacebookIcon, InstagramIcon, DiscordIcon, TelegramIcon } from "@/components/SocialIcons";
+import { FacebookIcon, InstagramIcon, DiscordIcon, TelegramIcon, XIcon } from "@/components/SocialIcons";
 import LinkButton from "@/components/LinkButton";
 import SocialIcon from "@/components/SocialIcon";
 import Stars from "@/components/Stars";
@@ -14,6 +14,7 @@ const links = [
   { href: "https://t.me/thanhvienandanh", title: ">>> Telegram", icon: TelegramIcon, color: "primary" as const },
   { href: "https://github.com/minhquoctran2604", title: ">>> GitHub", icon: Github, color: "accent" as const },
   { href: "https://www.linkedin.com/in/mqt2604/", title: ">>> LinkedIn", icon: Linkedin, color: "secondary" as const },
+  { href: "https://x.com/tranquoc226", title: ">>> X", icon: XIcon, color: "accent" as const },
 ];
 
 const container = {
